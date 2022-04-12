@@ -4,7 +4,7 @@ Filename : README.md
 ### 1) Introduction
 
 The sole reason this package exists, is because it contains a file called ```ax_bison_rootdir.m4```.
-This file implements a GNU Autoconf macro which can be used for specifying the location within which
+This file implements a GNU Autoconf macro which can be used for specifying the location into which
 the GNU Bison package has been installed on a particular system. The macro is called
 ```AX_BISON_ROOTDIR``` and in order for a GNU Autotools package to use it properly, it must be
 invoked from the package's ```configure.ac``` file as follows;
