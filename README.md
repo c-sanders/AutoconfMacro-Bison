@@ -15,7 +15,7 @@ AX_BISON_ROOTDIR()
 
 If this macro is able to be successfully included into a GNU Autotools project by the GNU Autotools
 themselves, then the following configure script option should be available when the resulting
-configure script for the package is invoked with the ```--help``` options;
+configure script is invoked script is invoked with the ```--help``` options;
 
 ```
 --with-bison-rootdir=[yes|no|path_to_bison_rootdir]
@@ -27,6 +27,17 @@ configure script for the package is invoked with the ```--help``` options;
                         bison which resides at a specific loction
                         (ARG=path_to_bison)
 ```
+
+
+### 2) About the macro
+
+The macro is implemented in rather a basic fashion. It does not do anything too complex, and most of
+the work is offloaded onto the GNU Autoconf macro ```AC_CHECK_PROG```.
+
+
+### 3) Implementation of the macro
+
+The macro is implemented as follows;
 
 ```
 01 # -----------------------------------------------------------------------------
