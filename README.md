@@ -14,8 +14,8 @@ AX_BISON_ROOTDIR()
 ```
 
 If this macro is able to be successfully included into a GNU Autotools project by the GNU Autotools
-themselves, then the following configure script option should appear when the resulting configure
-script for the package is invoked;
+themselves, then the following configure script option should be available when the resulting
+configure script for the package is invoked with the ```--help``` options;
 
 ```
 --with-bison-rootdir=[yes|no|path_to_bison_rootdir]
