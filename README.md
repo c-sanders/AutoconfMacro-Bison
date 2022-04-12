@@ -7,14 +7,14 @@ The sole reason this package exists, is because it contains a file called ```ax_
 This file implements a GNU Autoconf macro which can be used for specifying the location into which
 the GNU Bison package has been installed on a particular system. The macro is called
 ```AX_BISON_ROOTDIR``` and in order for a GNU Autotools package to use it properly, it must be
-invoked from the package's ```configure.ac``` file as follows;
+invoked from within the package's ```configure.ac``` file as follows;
 
 ```
 AX_BISON_ROOTDIR()
 ```
 
-If the GNU Autotools are able to successfully process a project which is using this macro, then they
-should have generated a file which is called ```configure.sh```. This file is referred to as the
+If the GNU Autotools are able to successfully process a project which uses this macro, then they
+should generate a file which is called ```configure```. This file is referred to as the
 configure script for the project which it was generated for, and if the ```AX_BISON_ROOTDIR``` macro
 was able to be successfully incorporated into this configure script by the GNU Autotools, then the
 following configure script option should be available when this configure script is invoked with
