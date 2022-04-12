@@ -3,29 +3,19 @@ Filename : README.md
 
 ### 1) Introduction
 
-GNU Autoconf macro for detecting if the GNU Bison package is installed on a system.
-
-This package is centred around the following file;
-
-```
-ax_bison_rootdir.m4
-```
-
-This file implements a GNU Autoconf macro which is called ```AX_BISON_ROOTDIR``` and this macro
-can be used by the GNU Autoconf utility to determine where the GNU Bison package has been installed
-on a particular system.
-
-In order to use this macro, the ```configure.ac``` file of any GNU Autotools package, must invoke
-it as follows;
+The reason this package exists, is because it contains a file called ```ax_bison_rootdir.m4```. This
+file implements a GNU Autoconf macro which can be used for specifying the location in which the GNU
+Bison package has been installed on a particular system. The macro is called ```AX_BISON_ROOTDIR```
+and in order for a GNU Autotools package to use it properly, it must be invoked from the package's
+```configure.ac``` file as follows;
 
 ```
 AX_BISON_ROOTDIR()
 ```
 
-Hello.
-
-If this macro is able to be successfully included into a GNU Autotools project, then it should
-appear as follows when the resulting configure script is invoked;
+If this macro is able to be successfully included into a GNU Autotools project by the GNU Autotools
+themselves, then it should appear as follows when the resulting configure script for the package
+is invoked;
 
 ```
 --with-bison-rootdir=[yes|no|path_to_bison_rootdir]
