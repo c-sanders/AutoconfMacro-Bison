@@ -62,8 +62,8 @@ As at 12 April 2022, the macro was implemented as follows;
 20           [instruct the build process to perform one (and only one), of the following three options; 1) use the first instance of bison which is found within the user's PATH (ARG=yes), 2) not use an instance of bison at all (ARG=no), or 3) use the instance of bison which resides at a specific loction (ARG=path_to_bison)]
 21         )
 22       ],
-23       [BISON=${withval}],
-24       [BISON=""]
+23       [BISON_ROOTDIR=${withval}],
+24       [BISON_ROOTDIR=""]
 25     )
 26     AS_CASE(
 27       [${withval}],
@@ -78,17 +78,26 @@ As at 12 April 2022, the macro was implemented as follows;
 
 - ```AC_DEFUN```
 
-This is what is actually responsible for the definition of the macro. The first argument on line 12,
-declares the name of the macro which is being defined, i.e. ```AX_BISON_ROOTDIR```, while the second
-argument on lines 14-33, define the body of the macro.
+This is what is actually responsible for the definition of the macro.
+
+The first argument on line 12 declares the name of the macro which is being defined, i.e.
+```AX_BISON_ROOTDIR```.
+
+The second argument on lines 14-33, define the body of the macro.
 
 
 - ```AC_ARG_WITH```
 
-This defines the variable which is associated with this macro. The first argument on line 16,
-declares the name of the variable, i.e.```bison_rootdir``, the second argument on lines 17-22
-defines how the macro is presented to the user of the configure script, the third argument on line
-23 what to set to if found, what to set to if not found.
+This defines the variable which is associated with this macro.
+
+The first argument on line 16 declares the name of the variable, i.e.```bison_rootdir``.
+
+The second argument on lines 17-22 defines how the macro is presented to the user of the configure
+script.
+
+The third argument on line 23 specifies what to set the environment variable to if found.
+
+The fourth argument on line 24 specifies what to set the environment variable to if not found.
 
 
 - ```AS_CASE```
