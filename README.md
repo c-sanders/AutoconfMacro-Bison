@@ -83,6 +83,17 @@ declares the name of the macro which is being defined, i.e. ```AX_BISON_ROOTDIR`
 argument on lines 14-33, define the body of the macro.
 
 
+- ```AC_ARG_WITH```
+
+This defines the variable which is associated with this macro. The first argument on line 16,
+declares the name of the variable, i.e.```bison_rootdir``, the second argument on lines 17-22
+defines how the macro is presented to the user of the configure script, the third argument on line
+23 what to set to if found, what to set to if not found.
+
+
+- ```AS_CASE```
+
+
 
 
 
