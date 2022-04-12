@@ -14,7 +14,7 @@ AX_BISON_ROOTDIR()
 ```
 
 If the GNU Autotools are able to successfully process a project which is using this macro, then they
-should generated a file which is called ```configure.sh```. This file is referred to as the
+should have generated a file which is called ```configure.sh```. This file is referred to as the
 configure script for the project which it was generated for, and if the ```AX_BISON_ROOTDIR``` macro
 was able to be successfully incorporated into this configure script by the GNU Autotools, then the
 following configure script option should be available when this configure script is invoked with
