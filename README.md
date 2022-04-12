@@ -22,8 +22,8 @@ the ```--help``` option;
 
 ```
 --with-bison-rootdir=[yes|no|path_to_bison_rootdir]
-                        instruct the build process to perform one - and only
-                        one, of the following three options; 1) use the
+                        instruct the build process to perform one (and only
+                        one), of the following three options; 1) use the
                         first instance of bison which is found within the
                         user's PATH (ARG=yes), 2) not use an instance of
                         bison at all (ARG=no), or 3) use the instance of
@@ -51,15 +51,15 @@ As at 12 April 2022, the macro was implemented as follows;
 09
 10 AC_DEFUN(
 11 
-12   [AX_BISON],
+12   [AX_BISON_ROOTDIR],
 13
 14   [
 15     AC_ARG_WITH(
-16       [bison],
+16       [bison_rootdir],
 17       [
 18         AS_HELP_STRING(
-19           [--with-bison=@<:@yes|no|path_to_bison@:>@],
-20           [Have the build process either; i) use the first instance of bison which is found within the user's PATH (ARG=yes), ii) not use an instance of bison at all (ARG=no), or iii) use the instance of bison which resides at a specific loction (ARG=path_to_bison)]
+19           [--with-bison-rootdir=@<:@yes|no|path_to_bison@:>@],
+20           [instruct the build process to perform one (and only one), of the following three options; 1) use the first instance of bison which is found within the user's PATH (ARG=yes), 2) not use an instance of bison at all (ARG=no), or 3) use the instance of bison which resides at a specific loction (ARG=path_to_bison)]
 21         )
 22       ],
 23       [BISON=${withval}],
@@ -78,9 +78,9 @@ As at 12 April 2022, the macro was implemented as follows;
 
 - ```AC_DEFUN```
 
-This actually defines the macro ```AX_BISON```. The first argument on line 12, declares the name of
-the macro which is being defined, while the second argument on lines 14-33, define the body of the
-macro.
+This is what is actually responsible for the definition of the macro. The first argument on line 12,
+declares the name of the macro which is being defined, i.e. ```AX_BISON_ROOTDIR```, while the second
+argument on lines 14-33, define the body of the macro.
 
 
 
