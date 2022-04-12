@@ -34,13 +34,13 @@ the ```--help``` option;
 
 ### 2) About the macro
 
-The macro is implemented in rather a basic fashion. It does not do anything too complex, and most of
+The macro is implemented in a rather basic fashion. It does not do anything too complex, and most of
 the work is offloaded onto the GNU Autoconf macro ```AC_CHECK_PROG```.
 
 
 ### 3) Implementation of the macro
 
-The macro is implemented as follows;
+As at 12 April 2022, the macro was implemented as follows;
 
 ```
 01 # -----------------------------------------------------------------------------
@@ -54,27 +54,27 @@ The macro is implemented as follows;
 09
 10 AC_DEFUN(
 11 
-12 [AX_BISON],
+12   [AX_BISON],
 13
-14 [
-15 AC_ARG_WITH(
-16 [bison],
-17 [
-18 AS_HELP_STRING(
-19 [--with-bison=@<:@yes|no|path_to_bison@:>@],
-20 [Have the build process either; i) use the first instance of bison which is found within the user's PATH (ARG=yes), ii) not use an instance of bison at all (ARG=no), or iii) use the instance of bison which resides at a specific loction (ARG=path_to_bison)]
-21 )
-22 ],
-23 [BISON=${withval}],
-24 [BISON=""]
-25 )
-26 AS_CASE(
-27 [${withval}],
-28 [yes], [AC_CHECK_PROG([BISON], [bison], [bison], [""])],
-29 [no],  [BISON=""],
-30 [BISON="${withval}"]
-31 )
-32 AC_SUBST(BISON)
-33 ]
+14   [
+15     AC_ARG_WITH(
+16       [bison],
+17       [
+18         AS_HELP_STRING(
+19           [--with-bison=@<:@yes|no|path_to_bison@:>@],
+20           [Have the build process either; i) use the first instance of bison which is found within the user's PATH (ARG=yes), ii) not use an instance of bison at all (ARG=no), or iii) use the instance of bison which resides at a specific loction (ARG=path_to_bison)]
+21         )
+22       ],
+23       [BISON=${withval}],
+24       [BISON=""]
+25     )
+26     AS_CASE(
+27       [${withval}],
+28       [yes], [AC_CHECK_PROG([BISON], [bison], [bison], [""])],
+29       [no],  [BISON=""],
+30       [BISON="${withval}"]
+31     )
+32     AC_SUBST(BISON)
+33   ]
 34)
 ```
