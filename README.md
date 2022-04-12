@@ -32,13 +32,10 @@ the ```--help``` option;
 ```
 
 
-### 2) About the macro
+### 2) Implementation of the macro
 
 The macro is implemented in a rather basic fashion. It does not do anything too complex, and most of
 the work is offloaded onto the GNU Autoconf macro ```AC_CHECK_PROG```.
-
-
-### 3) Implementation of the macro
 
 As at 12 April 2022, the macro was implemented as follows;
 
@@ -78,3 +75,28 @@ As at 12 April 2022, the macro was implemented as follows;
 33   ]
 34)
 ```
+
+- ```AC_DEFUN```
+
+This actually defines the macro ```AX_BISON```. The first argument on line 12, declares the name of
+the macro which is being defined, while the second argument on lines 14-33, define the body of the
+macro.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
